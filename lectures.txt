@@ -1,0 +1,3 @@
+dip_gonzalez -> 81
+
+fdip -> 49 (68 / 355)
