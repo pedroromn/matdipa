@@ -1,33 +1,33 @@
 %-----------------------------------------------------------------------
 %                   UNIVERSIDAD DEL MAGDALENA
-%               PROCESAMIENTO DIGITAL DE IMÁGENES
-%      TRANSFORMACIÓN POR ECUALIZACIÓN DEL HISTOGRAMA DE UNA IMAGEN
+%               PROCESAMIENTO DIGITAL DE IMï¿½GENES
+%      TRANSFORMACIï¿½N POR ECUALIZACIï¿½N DEL HISTOGRAMA DE UNA IMAGEN
 %                            DIGITAL
 %
 %   Integrantes:
-%   + Pedro Elías Romero Nieto   
-%   + Jonatan David Caraballo Henriquez
-%
-%   Función ecualiza : recibe como parámetro una imagen digital.
+%   + Pedro Elï¿½as Romero Nieto   
 %   
-%   Descripción: 
-%   im : imagen a la que se le va a aplicar la transformación
-%   distri:    tipo de ecualización que se va a realizar sobre la imagen
-%              son 5 tipos de ecualizaciones, según la distribución
+%
+%   Funciï¿½n ecualiza : recibe como parï¿½metro una imagen digital.
+%   
+%   Descripciï¿½n: 
+%   im : imagen a la que se le va a aplicar la transformaciï¿½n
+%   distri:    tipo de ecualizaciï¿½n que se va a realizar sobre la imagen
+%              son 5 tipos de ecualizaciones, segï¿½n la distribuciï¿½n
 %              que se piense emplear.
 %
 %               Distribuciones:
 %               1. Uniforme
 %               2. Exponencial
 %               3. Rayleigh
-%               4. Hipercúbica
-%               5. Logaritmo Hipercúbica
+%               4. Hipercï¿½bica
+%               5. Logaritmo Hipercï¿½bica
 %
 %   alpha : factor empleado por algunas de las distribuciones
 %           0 < alpha < 1.
 % 
 %   Un ejemplo donde se muestra la forma correcta de ejecutar 
-%   la función ecualiza, es:
+%   la funciï¿½n ecualiza, es:
 % 
 %   ecualiza(im,'uniforme');
 %   ecualiza(im,'exponencial',0.5);
@@ -43,17 +43,17 @@ if isrgb(im)
     im = rgb_to_gray(im);
 end
 
-%    f : número de filas de la matriz im
-%    c : número de columnas de la matriz im
+%    f : nï¿½mero de filas de la matriz im
+%    c : nï¿½mero de columnas de la matriz im
 [f,c] = size(im);
 
 I = uint8(0:255);
 
-%   N : vector que contiene la frecuencia de aparición de cada nivel 
+%   N : vector que contiene la frecuencia de apariciï¿½n de cada nivel 
 %       de intensidad presente en la imagen
 N = zeros(1,256);
 
-%   P: vector que contiene la probabilidad de aparición de cada nivel
+%   P: vector que contiene la probabilidad de apariciï¿½n de cada nivel
 %      de intensidad presente en la imagen.
 P = zeros(1,256);
 
@@ -64,7 +64,7 @@ for x = 1:f
     end
 end
 
-%   M : número total de pixeles en la imagen
+%   M : nï¿½mero total de pixeles en la imagen
 M = f.*c;
 
 N = double(N);
@@ -82,11 +82,11 @@ PA = cumsum(P);
 %   gmax = maximo nivel de intensidad presente en la imagen
 gmax = double(max(max(im)));
 
-%   gmin : mínimo nivel de intensidad presente en la imagen
+%   gmin : mï¿½nimo nivel de intensidad presente en la imagen
 gmin = double(min(min(im)));
 
-%   nim : copia de la imagen original, sobre la cual se realizará la
-%   transformación
+%   nim : copia de la imagen original, sobre la cual se realizarï¿½ la
+%   transformaciï¿½n
 
 nim  = zeros(f,c);
 

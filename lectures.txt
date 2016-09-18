@@ -13,4 +13,4 @@ Digital Image Processing and Analysis - Computer Vision
 
 dip_gonzalez -> 81
 
-fdip -> 49 (68 / 355)
+fdip -> 57 (76 / 355)
